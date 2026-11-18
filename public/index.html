@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKFA Comfort — Versal Korporativ Kechasi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A84C;--gold-light:#E8D48B;--gold-dark:#A07B2A;
+  --bg:#0A0A0A;--bg2:#111111;--bg3:#1A1A1A;
+  --card:#141414;--card-border:#2A2A2A;
+  --text:#F5F0E8;--text-soft:#9A9590;
+  --red:#C82328;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Playfair Display',Georgia,serif}
+
+.navbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.5rem;background:rgba(10,10,10,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-brand{background:#fff;border-radius:6px;padding:3px 10px;display:inline-flex;align-items:center}
+.nav-brand img{height:24px;width:auto;display:block}
+.nav-links a{color:var(--text-soft);text-decoration:none;margin-left:1.5rem;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--bg);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.08) 0%,transparent 60%)}
+.hero-content{position:relative;padding:2rem 1.5rem;max-width:680px}
+.hero-logo{margin-bottom:2rem}
+.hero-logo img{height:44px;width:auto;background:#fff;border-radius:8px;padding:5px 12px}
+.divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 1.2rem}
+.hero-eyebrow{letter-spacing:.35em;text-transform:uppercase;font-size:.65rem;font-weight:700;color:var(--gold);margin-bottom:.8rem}
+.hero h1{font-size:clamp(2.6rem,8vw,4.5rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;font-style:italic;color:var(--text-soft);margin-bottom:1.8rem}
+.hero-date{font-size:.9rem;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:2.2rem}
+
+.countdown{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.count-box{background:var(--bg3);border:1px solid var(--card-border);border-radius:10px;padding:.7rem .9rem;min-width:70px;text-align:center}
+.count-box span{display:block;font-size:1.8rem;font-weight:800;color:var(--gold);font-family:'Playfair Display',serif}
+.count-box small{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);font-weight:700}
+
+.btn{display:inline-block;padding:.8rem 2.6rem;background:transparent;color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:0;font-weight:700;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;transition:all .25s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+
+section{padding:5rem 1.5rem;max-width:900px;margin:0 auto}
+h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:.5rem;color:var(--gold-light)}
+.section-sub{text-align:center;font-size:.85rem;color:var(--text-soft);margin-bottom:2.5rem}
+.gold-line{width:40px;height:1px;background:var(--gold);margin:.8rem auto 0}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+
+.info-grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media(min-width:700px){.info-grid{grid-template-columns:1fr 1fr}}
+.info-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:1.6rem;position:relative;overflow:hidden}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.info-card h3{font-size:.9rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
+.info-card p{font-size:.88rem;color:var(--text-soft)}
+.info-card .place{font-weight:700;color:var(--text);font-size:1.05rem;margin-bottom:.2rem}
+.info-card .when-badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold);font-weight:700;font-size:.78rem;padding:.25rem .7rem;border-radius:20px;margin:.6rem 0 .8rem;border:1px solid rgba(201,168,76,.2)}
+.map-btn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:var(--gold);text-decoration:none;font-size:.8rem;font-weight:700;padding:.5rem 1rem;border:1px solid var(--card-border);border-radius:8px;transition:all .2s;letter-spacing:.03em}
+.map-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+
+.day-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.day-tab{border:1px solid var(--card-border);background:var(--card);color:var(--text-soft);padding:.55rem 1.2rem;border-radius:8px;cursor:pointer;transition:all .2s;text-align:center;min-width:95px}
+.day-tab .tab-day{display:block;font-weight:800;font-size:.85rem}
+.day-tab .tab-date{display:block;font-size:.68rem;font-weight:600;opacity:.6}
+.day-tab.active,.day-tab:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.day-tab.active .tab-date,.day-tab:hover .tab-date{opacity:1;color:var(--bg)}
+
+.day{display:none}
+.day.active{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.activities{list-style:none}
+.activities li{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--card-border);align-items:flex-start}
+.activities li:last-child{border-bottom:none}
+.activities li.highlight{background:rgba(201,168,76,.05);margin:0 -1rem;padding:1.1rem 1rem;border-radius:10px;border-bottom:none;border-left:2px solid var(--gold)}
+.time-badge{flex:0 0 auto;background:var(--bg3);color:var(--gold);font-weight:800;font-size:.75rem;padding:.3rem .6rem;border-radius:6px;white-space:nowrap;border:1px solid var(--card-border)}
+.activities li.highlight .time-badge{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.details h4{font-size:.92rem;margin-bottom:.1rem;color:var(--text)}
+.details p{font-size:.82rem;color:var(--text-soft);margin-bottom:.35rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem}
+.location,.responsible{display:inline-flex;align-items:center;font-size:.75rem;font-weight:600;padding:.2rem .5rem;border-radius:5px;gap:.2rem}
+.location{background:rgba(201,168,76,.1);color:var(--gold)}
+.responsible{background:var(--bg3);color:var(--text-soft)}
+.responsible a{color:var(--gold);text-decoration:none;font-weight:700}
+.responsible a:hover{text-decoration:underline}
+
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gallery-grid img{width:100%;height:240px;object-fit:cover;border-radius:10px;border:1px solid var(--card-border)}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+
+footer{text-align:center;padding:3rem 1rem;background:var(--bg);border-top:1px solid var(--card-border)}
+.footer-logo{margin-bottom:1rem}
+.footer-logo img{height:32px;width:auto;background:#fff;border-radius:6px;padding:3px 8px}
+footer p{font-size:.85rem;color:var(--text-soft)}
+footer .small{font-size:.72rem;opacity:.5;margin-top:.3rem}
+
+@media(max-width:600px){
+  .navbar{padding:.5rem 1rem}
+  .nav-links a{margin-left:.7rem;font-size:.75rem}
+  section{padding:3.5rem 1rem}
+  .activities li{gap:.7rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><img src="akfa-logo.png" alt="AKFA"></div>
+  <div class="nav-links">
+    <a href="#info">Manzil</a>
+    <a href="#dastur">Dastur</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content reveal">
+    <div class="hero-logo"><img src="akfa-logo.png" alt="AKFA"></div>
+    <div class="divider"></div>
+    <p class="hero-eyebrow">AKFA Comfort taklif etadi</p>
+    <h1>Korporativ<br>Kecha</h1>
+    <p class="hero-subtitle">Versal, Toshkent</p>
+    <p class="hero-date">— Sana tez orada e'lon qilinadi —</p>
+
+    <div class="countdown" id="countdown">
+      <div class="count-box"><span id="days">--</span><small>kun</small></div>
+      <div class="count-box"><span id="hours">--</span><small>soat</small></div>
+      <div class="count-box"><span id="minutes">--</span><small>daqiqa</small></div>
+      <div class="count-box"><span id="seconds">--</span><small>soniya</small></div>
+    </div>
+
+    <a href="#dastur" class="btn">Dasturni ko'rish</a>
+  </div>
+</section>
+
+<section class="trip-info reveal" id="info">
+  <h2>Tadbir ma'lumotlari</h2>
+  <div class="gold-line"></div>
+  <p class="section-sub">Barcha tafsilotlar quyida</p>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>📍 Manzil</h3>
+      <p class="place">Versal</p>
+      <p>Toshkent shahri</p>
+      <p class="when-badge">Sana: TBD · Kechqurun</p>
+      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Versal+Tashkent">📍 Google Maps'da ochish</a>
+    </div>
+    <div class="info-card">
+      <h3>👔 Dress Code</h3>
+      <p class="place">Rasmiy / Smart Casual</p>
+      <p>Erkaklar: kostyum yoki ko'ylak<br>Ayollar: oqshom libosi</p>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary reveal" id="dastur">
+  <h2>Kecha dasturi</h2>
+  <div class="gold-line"></div>
+  <p class="section-sub">Vaqtinchalik dastur — aniq ma'lumotlar keyinroq yangilanadi</p>
+
+  <div class="day active" data-day="1">
+    <ul class="activities">
+      <li>
+        <div class="time-badge">17:00</div>
+        <div class="details">
+          <h4>Mehmonlarni kutib olish</h4>
+          <p>Welcome drink va ro'yxatdan o'tish</p>
+          <div class="meta">
+            <span class="location">📍 Versal lobbi</span>
+            <span class="responsible">📞 <a href="tel:+998900000000">90 000 00 00</a></span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="time-badge">18:00</div>
+        <div class="details">
+          <h4>Rasmiy ochilish</h4>
+          <p>AKFA Comfort rahbariyati so'zi va taqdimot</p>
+          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
+        </div>
+      </li>
+      <li class="highlight">
+        <div class="time-badge">18:30</div>
+        <div class="details">
+          <h4>✨ Maxsus dastur</h4>
+          <p>Mukofotlash marosimi va sovg'alar topshirish</p>
+          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="time-badge">19:30</div>
+        <div class="details">
+          <h4>Ziyofat</h4>
+          <p>Maxsus tayyorlangan kechki ovqat</p>
+          <div class="meta">
+            <span class="location">📍 Versal</span>
+            <span class="responsible">📞 <a href="tel:+998900000000">90 000 00 00</a></span>
+          </div>
+        </div>
+      </li>
+      <li class="highlight">
+        <div class="time-badge">20:30</div>
+        <div class="details">
+          <h4>🎵 Konsert dasturi</h4>
+          <p>Jonli musiqa va ko'ngilochar dastur</p>
+          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="time-badge">22:00</div>
+        <div class="details">
+          <h4>Erkin muloqot</h4>
+          <p>Networking, musiqa va raqs</p>
+          <div class="meta"><span class="location">📍 Versal</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="time-badge">23:30</div>
+        <div class="details">
+          <h4>Yakunlash</h4>
+          <p>Xayrlashuv va kechaning yakunlanishi</p>
+          <div class="meta"><span class="location">📍 Versal</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"><img src="akfa-logo.png" alt="AKFA"></div>
+  <p>AKFA Comfort hamkorlari uchun tashkil etilgan kecha</p>
+  <p class="small">Savollar bo'lsa, mas'ul shaxslar bilan bog'laning</p>
+</footer>
+
+<script>
+var T=new Date('2026-12-31T17:00:00+05:00').getTime(),D=document.getElementById('days'),H=document.getElementById('hours'),M=document.getElementById('minutes'),S=document.getElementById('seconds');
+function tick(){var d=T-Date.now();if(d<=0){D.textContent=H.textContent=M.textContent=S.textContent='0';return}D.textContent=Math.floor(d/864e5);H.textContent=Math.floor(d%864e5/36e5);M.textContent=Math.floor(d%36e5/6e4);S.textContent=Math.floor(d%6e4/1e3)}
+tick();setInterval(tick,1000);
+if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')})}
+</script>
+</body>
+</html>
