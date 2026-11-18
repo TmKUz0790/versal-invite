@@ -27,7 +27,7 @@ body{overflow-x:hidden;font-family:'Cormorant Garamond',Georgia,serif;font-size:
 .nav-links a{font-family:'Cinzel',serif;color:var(--ink-soft);text-decoration:none;margin-left:1.6rem;font-size:.78rem;font-weight:600;letter-spacing:.18em;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
 
-.hero{min-height:calc(100vh - 52px);display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem}
 .frame{position:relative;max-width:640px;width:100%;background:var(--white);padding:3.2rem 2rem 3rem;text-align:center;
   box-shadow:0 30px 60px -30px rgba(140,100,32,.35),0 0 0 1px var(--line)}
 .frame::before,.frame::after{content:'';position:absolute;pointer-events:none}
@@ -140,14 +140,6 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
   </defs>
 </svg>
 
-<nav class="navbar">
-  <div class="nav-brand"><img src="akfa-logo.png" alt="AKFA"></div>
-  <div class="nav-links">
-    <a href="#info">MANZIL</a>
-    <a href="#dastur">DASTUR</a>
-  </div>
-</nav>
-
 <section class="hero">
   <div class="frame reveal">
     <svg class="corner tl"><use href="#corner"/></svg>
@@ -169,7 +161,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
     <p class="venue">Versal · Toshkent</p>
     <svg class="ornament"><use href="#orn"/></svg>
     <p class="invite-text">Birgalikda bosib o'tilgan yo'l, o'zaro ishonch va mustahkam hamkorlik sharafiga bag'ishlangan oqshomimizga Sizni samimiy taklif etamiz.</p>
-    <p class="date-line">SANA TEZ ORADA E'LON QILINADI</p>
+    <p class="date-line">21 DEKABR 2026 · 19:00</p>
 
     <div class="countdown">
       <div class="count-box"><span id="days" class="gold-text">--</span><small>kun</small></div>
@@ -194,7 +186,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       <h3>MANZIL</h3>
       <p class="big">Versal</p>
       <p>Toshkent shahri</p>
-      <span class="pill">MEHMONLARNI KUTISH · 17:00</span><br>
+      <span class="pill">21 DEKABR · 19:00</span><br>
       <a class="link-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Versal+Tashkent">XARITADA OCHISH</a>
     </div>
     <div class="card">
@@ -216,7 +208,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
 
   <ul class="timeline">
     <li>
-      <div class="time gold-text">17:00</div>
+      <div class="time gold-text">19:00</div>
       <div class="ev">
         <h4>Mehmonlarni kutib olish</h4>
         <p>Jonli musiqa ostida welcome drink va xotira suratlari</p>
@@ -224,7 +216,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       </div>
     </li>
     <li>
-      <div class="time gold-text">18:00</div>
+      <div class="time gold-text">19:30</div>
       <div class="ev">
         <h4>Tantanali ochilish</h4>
         <p>AKFA Comfort rahbariyatining tabrik so'zi va yil yakunlari</p>
@@ -232,7 +224,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       </div>
     </li>
     <li class="hl">
-      <div class="time gold-text">18:30</div>
+      <div class="time gold-text">20:00</div>
       <div class="ev">
         <h4>Taqdirlash marosimi</h4>
         <p>Yil davomida eng katta hissa qo'shgan hamkorlarimizni munosib taqdirlash</p>
@@ -240,7 +232,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       </div>
     </li>
     <li>
-      <div class="time gold-text">19:30</div>
+      <div class="time gold-text">20:45</div>
       <div class="ev">
         <h4>Gala ziyofat</h4>
         <p>Mohir oshpazlar tomonidan Siz uchun maxsus tayyorlangan dasturxon</p>
@@ -248,7 +240,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       </div>
     </li>
     <li class="hl">
-      <div class="time gold-text">20:30</div>
+      <div class="time gold-text">21:30</div>
       <div class="ev">
         <h4>Konsert dasturi</h4>
         <p>Taniqli san'atkorlar ishtirokidagi jonli konsert</p>
@@ -256,7 +248,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
       </div>
     </li>
     <li>
-      <div class="time gold-text">22:00</div>
+      <div class="time gold-text">22:30</div>
       <div class="ev">
         <h4>Erkin muloqot</h4>
         <p>Samimiy suhbatlar, yangi tanishuvlar, musiqa va raqs</p>
@@ -282,7 +274,7 @@ footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;ma
 </footer>
 
 <script>
-var T=new Date('2026-12-31T17:00:00+05:00').getTime(),D=document.getElementById('days'),H=document.getElementById('hours'),M=document.getElementById('minutes'),S=document.getElementById('seconds');
+var T=new Date('2026-12-21T19:00:00+05:00').getTime(),D=document.getElementById('days'),H=document.getElementById('hours'),M=document.getElementById('minutes'),S=document.getElementById('seconds');
 function tick(){var d=T-Date.now();if(d<=0){D.textContent=H.textContent=M.textContent=S.textContent='0';return}D.textContent=Math.floor(d/864e5);H.textContent=Math.floor(d%864e5/36e5);M.textContent=Math.floor(d%36e5/6e4);S.textContent=Math.floor(d%6e4/1e3)}
 tick();setInterval(tick,1000);
 if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')})}
