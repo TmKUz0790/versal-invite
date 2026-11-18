@@ -4,242 +4,285 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AKFA Comfort — Versal Korporativ Kechasi</title>
+<meta name="theme-color" content="#FBF8F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --gold:#C9A84C;--gold-light:#E8D48B;--gold-dark:#A07B2A;
-  --bg:#0A0A0A;--bg2:#111111;--bg3:#1A1A1A;
-  --card:#141414;--card-border:#2A2A2A;
-  --text:#F5F0E8;--text-soft:#9A9590;
-  --red:#C82328;
+  --ivory:#FBF8F1;--white:#FFFFFF;--cream:#F5EFE1;
+  --gold:#B8892D;--gold-light:#E6C66A;--gold-dark:#8C6420;
+  --gold-grad:linear-gradient(135deg,#8C6420 0%,#C9A24A 30%,#F0D78C 50%,#C9A24A 70%,#8C6420 100%);
+  --ink:#2B2418;--ink-soft:#6E6253;--line:#E7DCC3;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'Playfair Display',Georgia,serif}
+body{overflow-x:hidden;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;background:var(--ivory);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 20% 10%,rgba(230,198,106,.10) 0,transparent 40%),radial-gradient(circle at 80% 90%,rgba(230,198,106,.10) 0,transparent 40%)}
+.gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold)}
 
-.navbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.5rem;background:rgba(10,10,10,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
-.nav-brand{background:#fff;border-radius:6px;padding:3px 10px;display:inline-flex;align-items:center}
-.nav-brand img{height:24px;width:auto;display:block}
-.nav-links a{color:var(--text-soft);text-decoration:none;margin-left:1.5rem;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.navbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navbar::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold-grad);opacity:.6}
+.nav-brand img{height:26px;width:auto;display:block}
+.nav-links a{font-family:'Cinzel',serif;color:var(--ink-soft);text-decoration:none;margin-left:1.6rem;font-size:.78rem;font-weight:600;letter-spacing:.18em;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
 
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--bg);overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.08) 0%,transparent 60%)}
-.hero-content{position:relative;padding:2rem 1.5rem;max-width:680px}
-.hero-logo{margin-bottom:2rem}
-.hero-logo img{height:44px;width:auto;background:#fff;border-radius:8px;padding:5px 12px}
-.divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 1.2rem}
-.hero-eyebrow{letter-spacing:.35em;text-transform:uppercase;font-size:.65rem;font-weight:700;color:var(--gold);margin-bottom:.8rem}
-.hero h1{font-size:clamp(2.6rem,8vw,4.5rem);font-weight:900;line-height:1.05;margin-bottom:.4rem;background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-subtitle{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;font-style:italic;color:var(--text-soft);margin-bottom:1.8rem}
-.hero-date{font-size:.9rem;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:2.2rem}
+.hero{min-height:calc(100vh - 52px);display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem}
+.frame{position:relative;max-width:640px;width:100%;background:var(--white);padding:3.2rem 2rem 3rem;text-align:center;
+  box-shadow:0 30px 60px -30px rgba(140,100,32,.35),0 0 0 1px var(--line)}
+.frame::before,.frame::after{content:'';position:absolute;pointer-events:none}
+.frame::before{inset:12px;border:1.5px solid var(--gold)}
+.frame::after{inset:18px;border:.5px solid var(--gold-light)}
+.corner{position:absolute;width:54px;height:54px;color:var(--gold)}
+.corner.tl{top:4px;left:4px}.corner.tr{top:4px;right:4px;transform:scaleX(-1)}
+.corner.bl{bottom:4px;left:4px;transform:scaleY(-1)}.corner.br{bottom:4px;right:4px;transform:scale(-1,-1)}
+.crown{width:64px;height:44px;margin:0 auto .8rem;display:block}
+.hero-logo img{height:36px;width:auto;margin-bottom:1.4rem}
+.eyebrow{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.42em;color:var(--gold-dark);font-weight:600}
+.script{font-family:'Great Vibes',cursive;font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.1;margin:.7rem 0 .3rem;color:var(--gold)}
+.hero h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.9rem,7.5vw,3.4rem);letter-spacing:.08em;line-height:1.1;margin-bottom:.6rem}
+.venue{font-style:italic;font-size:1.35rem;color:var(--ink-soft);margin-bottom:1.4rem}
+.ornament{display:block;width:220px;max-width:70%;height:22px;margin:0 auto 1.4rem;color:var(--gold)}
+.date-line{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.25em;color:var(--ink);margin-bottom:1.8rem}
 
-.countdown{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.count-box{background:var(--bg3);border:1px solid var(--card-border);border-radius:10px;padding:.7rem .9rem;min-width:70px;text-align:center}
-.count-box span{display:block;font-size:1.8rem;font-weight:800;color:var(--gold);font-family:'Playfair Display',serif}
-.count-box small{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);font-weight:700}
+.countdown{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.count-box{min-width:72px;padding:.7rem .5rem;border:1px solid var(--gold);background:linear-gradient(180deg,#fff,var(--cream));position:relative}
+.count-box::before{content:'';position:absolute;inset:3px;border:.5px solid var(--gold-light);pointer-events:none}
+.count-box span{display:block;font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700}
+.count-box small{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;color:var(--ink-soft);text-transform:uppercase}
 
-.btn{display:inline-block;padding:.8rem 2.6rem;background:transparent;color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:0;font-weight:700;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;transition:all .25s}
-.btn:hover{background:var(--gold);color:var(--bg)}
+.btn{display:inline-block;padding:.85rem 2.4rem;font-family:'Cinzel',serif;font-weight:600;font-size:.78rem;letter-spacing:.25em;color:#fff;text-decoration:none;background:var(--gold-grad);background-size:200% 100%;transition:background-position .6s,box-shadow .3s;box-shadow:0 10px 24px -10px rgba(140,100,32,.6)}
+.btn:hover{background-position:100% 0;box-shadow:0 14px 30px -10px rgba(140,100,32,.75)}
 
-section{padding:5rem 1.5rem;max-width:900px;margin:0 auto}
-h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:.5rem;color:var(--gold-light)}
-.section-sub{text-align:center;font-size:.85rem;color:var(--text-soft);margin-bottom:2.5rem}
-.gold-line{width:40px;height:1px;background:var(--gold);margin:.8rem auto 0}
+section.block{padding:5rem 1.2rem;max-width:860px;margin:0 auto}
+.head{text-align:center;margin-bottom:2.8rem}
+.head .script{font-size:2.2rem;margin:0}
+.head h2{font-family:'Cinzel',serif;font-size:clamp(1.5rem,5vw,2rem);font-weight:700;letter-spacing:.12em}
+.head .ornament{margin:1rem auto 0;width:160px}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in-view{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in-view{opacity:1;transform:none}
 
-.info-grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+.info-grid{display:grid;gap:1.4rem;grid-template-columns:1fr}
 @media(min-width:700px){.info-grid{grid-template-columns:1fr 1fr}}
-.info-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:1.6rem;position:relative;overflow:hidden}
-.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.info-card h3{font-size:.9rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
-.info-card p{font-size:.88rem;color:var(--text-soft)}
-.info-card .place{font-weight:700;color:var(--text);font-size:1.05rem;margin-bottom:.2rem}
-.info-card .when-badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold);font-weight:700;font-size:.78rem;padding:.25rem .7rem;border-radius:20px;margin:.6rem 0 .8rem;border:1px solid rgba(201,168,76,.2)}
-.map-btn{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:var(--gold);text-decoration:none;font-size:.8rem;font-weight:700;padding:.5rem 1rem;border:1px solid var(--card-border);border-radius:8px;transition:all .2s;letter-spacing:.03em}
-.map-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.card{background:var(--white);padding:2.2rem 1.8rem;text-align:center;position:relative;box-shadow:0 20px 40px -28px rgba(140,100,32,.35),0 0 0 1px var(--line)}
+.card::before{content:'';position:absolute;inset:8px;border:1px solid var(--line);pointer-events:none}
+.card .icon{width:40px;height:40px;color:var(--gold);margin:0 auto .9rem;display:block}
+.card h3{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.3em;color:var(--gold-dark);margin-bottom:.7rem}
+.card .big{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:600;margin-bottom:.2rem}
+.card p{color:var(--ink-soft)}
+.pill{display:inline-block;margin:.9rem 0 1.1rem;padding:.3rem 1rem;border:1px solid var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.18em;color:var(--gold-dark)}
+.link-btn{position:relative;display:inline-block;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold-dark);text-decoration:none;padding:.6rem 1.4rem;border:1px solid var(--gold);transition:all .25s}
+.link-btn:hover{background:var(--gold);color:#fff}
 
-.day-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.2rem;flex-wrap:wrap}
-.day-tab{border:1px solid var(--card-border);background:var(--card);color:var(--text-soft);padding:.55rem 1.2rem;border-radius:8px;cursor:pointer;transition:all .2s;text-align:center;min-width:95px}
-.day-tab .tab-day{display:block;font-weight:800;font-size:.85rem}
-.day-tab .tab-date{display:block;font-size:.68rem;font-weight:600;opacity:.6}
-.day-tab.active,.day-tab:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
-.day-tab.active .tab-date,.day-tab:hover .tab-date{opacity:1;color:var(--bg)}
+.timeline{position:relative;list-style:none}
+.timeline::before{content:'';position:absolute;top:8px;bottom:8px;left:94px;width:1px;background:linear-gradient(180deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent)}
+.timeline li{position:relative;display:grid;grid-template-columns:80px 1fr;gap:2.2rem;padding:1.1rem 0}
+.timeline li::before{content:'';position:absolute;left:89px;top:1.55rem;width:11px;height:11px;background:var(--white);border:1.5px solid var(--gold);transform:rotate(45deg)}
+.timeline li.hl::before{background:var(--gold-grad);border-color:var(--gold-dark)}
+.time{font-family:'Cinzel',serif;font-weight:700;font-size:1.05rem;text-align:right;padding-top:.15rem}
+.ev h4{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;letter-spacing:.05em;margin-bottom:.15rem}
+.timeline li.hl .ev{background:var(--white);padding:.9rem 1.1rem;margin:-.6rem 0 0 -.4rem;box-shadow:0 0 0 1px var(--line),0 14px 30px -22px rgba(140,100,32,.5);border-left:2px solid var(--gold)}
+.ev p{color:var(--ink-soft);font-size:1.05rem}
+.meta{margin-top:.35rem;display:flex;flex-wrap:wrap;gap:.9rem;font-size:.95rem;font-style:italic;color:var(--gold-dark)}
+.meta a{color:var(--gold-dark);text-decoration:none;font-style:normal;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.08em;border-bottom:1px solid var(--gold-light)}
+.note{text-align:center;font-style:italic;color:var(--ink-soft);margin-top:2rem;font-size:1rem}
 
-.day{display:none}
-.day.active{display:block;animation:fadeUp .35s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-.activities{list-style:none}
-.activities li{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--card-border);align-items:flex-start}
-.activities li:last-child{border-bottom:none}
-.activities li.highlight{background:rgba(201,168,76,.05);margin:0 -1rem;padding:1.1rem 1rem;border-radius:10px;border-bottom:none;border-left:2px solid var(--gold)}
-.time-badge{flex:0 0 auto;background:var(--bg3);color:var(--gold);font-weight:800;font-size:.75rem;padding:.3rem .6rem;border-radius:6px;white-space:nowrap;border:1px solid var(--card-border)}
-.activities li.highlight .time-badge{background:var(--gold);color:var(--bg);border-color:var(--gold)}
-.details h4{font-size:.92rem;margin-bottom:.1rem;color:var(--text)}
-.details p{font-size:.82rem;color:var(--text-soft);margin-bottom:.35rem}
-.meta{display:flex;flex-wrap:wrap;gap:.4rem}
-.location,.responsible{display:inline-flex;align-items:center;font-size:.75rem;font-weight:600;padding:.2rem .5rem;border-radius:5px;gap:.2rem}
-.location{background:rgba(201,168,76,.1);color:var(--gold)}
-.responsible{background:var(--bg3);color:var(--text-soft)}
-.responsible a{color:var(--gold);text-decoration:none;font-weight:700}
-.responsible a:hover{text-decoration:underline}
-
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.gallery-grid img{width:100%;height:240px;object-fit:cover;border-radius:10px;border:1px solid var(--card-border)}
-@media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
-
-footer{text-align:center;padding:3rem 1rem;background:var(--bg);border-top:1px solid var(--card-border)}
-.footer-logo{margin-bottom:1rem}
-.footer-logo img{height:32px;width:auto;background:#fff;border-radius:6px;padding:3px 8px}
-footer p{font-size:.85rem;color:var(--text-soft)}
-footer .small{font-size:.72rem;opacity:.5;margin-top:.3rem}
+footer{text-align:center;padding:3.5rem 1rem 3rem;background:var(--white);border-top:1px solid var(--line);position:relative}
+footer::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:240px;height:1px;background:var(--gold-grad)}
+footer img{height:30px;width:auto;margin-bottom:1rem}
+footer .script{font-size:1.9rem;margin:0 0 .3rem}
+footer p{color:var(--ink-soft)}
+footer .small{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.3em;margin-top:.8rem;color:var(--gold-dark)}
 
 @media(max-width:600px){
-  .navbar{padding:.5rem 1rem}
-  .nav-links a{margin-left:.7rem;font-size:.75rem}
-  section{padding:3.5rem 1rem}
-  .activities li{gap:.7rem}
+  body{font-size:17px}
+  .navbar{padding:.55rem 1rem}
+  .nav-links a{margin-left:.9rem;font-size:.66rem;letter-spacing:.12em}
+  .frame{padding:2.8rem 1.3rem 2.6rem}
+  .corner{width:42px;height:42px}
+  .hero{padding:1.5rem .75rem}
+  .hero h1{font-size:clamp(1.4rem,8.4vw,2.2rem);letter-spacing:.03em}
+  .eyebrow{letter-spacing:.28em}
+  .countdown{flex-wrap:nowrap;gap:.4rem}
+  .count-box{min-width:0;flex:1;max-width:76px}
+  .count-box span{font-size:1.35rem}
+  .count-box small{font-size:.5rem;letter-spacing:.1em}
+  section.block{padding:3.8rem 1rem}
+  .timeline::before{left:68px}
+  .timeline li{grid-template-columns:56px 1fr;gap:1.9rem}
+  .timeline li::before{left:63px}
+  .time{font-size:.92rem}
 }
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8C6420"/><stop offset=".5" stop-color="#E6C66A"/><stop offset="1" stop-color="#8C6420"/>
+    </linearGradient>
+    <symbol id="orn" viewBox="0 0 240 24">
+      <path d="M0 12h86M154 12h86" stroke="currentColor" stroke-width="1"/>
+      <path d="M120 3l9 9-9 9-9-9z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M120 8l4 4-4 4-4-4z" fill="currentColor"/>
+      <path d="M92 12c6-7 12-7 17 0M92 12c6 7 12 7 17 0M148 12c-6-7-12-7-17 0M148 12c-6 7-12 7-17 0" fill="none" stroke="currentColor" stroke-width="1"/>
+      <circle cx="88" cy="12" r="1.8" fill="currentColor"/><circle cx="152" cy="12" r="1.8" fill="currentColor"/>
+    </symbol>
+    <symbol id="corner" viewBox="0 0 54 54">
+      <path d="M2 52V14C2 7 7 2 14 2h38" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M8 52V18c0-6 4-10 10-10h34" fill="none" stroke="currentColor" stroke-width=".7"/>
+      <path d="M14 14c6 0 9 3 9 9-6 0-9-3-9-9z" fill="currentColor"/>
+      <circle cx="26" cy="26" r="1.6" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav class="navbar">
   <div class="nav-brand"><img src="akfa-logo.png" alt="AKFA"></div>
   <div class="nav-links">
-    <a href="#info">Manzil</a>
-    <a href="#dastur">Dastur</a>
+    <a href="#info">MANZIL</a>
+    <a href="#dastur">DASTUR</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-content reveal">
+  <div class="frame reveal">
+    <svg class="corner tl"><use href="#corner"/></svg>
+    <svg class="corner tr"><use href="#corner"/></svg>
+    <svg class="corner bl"><use href="#corner"/></svg>
+    <svg class="corner br"><use href="#corner"/></svg>
+
+    <svg class="crown" viewBox="-2 -2 68 48" aria-hidden="true">
+      <path d="M6 36L2 10l15 12L32 2l15 20 15-12-4 26z" fill="url(#g)" stroke="#8C6420" stroke-width="1"/>
+      <rect x="6" y="37" width="52" height="5" fill="url(#g)" stroke="#8C6420" stroke-width="1"/>
+      <circle cx="2" cy="10" r="2.4" fill="#8C6420"/><circle cx="32" cy="2" r="2.4" fill="#8C6420"/><circle cx="62" cy="10" r="2.4" fill="#8C6420"/>
+      <circle cx="32" cy="26" r="3" fill="#fff" stroke="#8C6420"/>
+    </svg>
+
     <div class="hero-logo"><img src="akfa-logo.png" alt="AKFA"></div>
-    <div class="divider"></div>
-    <p class="hero-eyebrow">AKFA Comfort taklif etadi</p>
-    <h1>Korporativ<br>Kecha</h1>
-    <p class="hero-subtitle">Versal, Toshkent</p>
-    <p class="hero-date">— Sana tez orada e'lon qilinadi —</p>
+    <p class="eyebrow">AKFA COMFORT TAKLIF ETADI</p>
+    <p class="script">Siz taklif etilasiz</p>
+    <h1 class="gold-text">KORPORATIV KECHA</h1>
+    <p class="venue">Versal saroyi · Toshkent</p>
+    <svg class="ornament"><use href="#orn"/></svg>
+    <p class="date-line">SANA TEZ ORADA E'LON QILINADI</p>
 
-    <div class="countdown" id="countdown">
-      <div class="count-box"><span id="days">--</span><small>kun</small></div>
-      <div class="count-box"><span id="hours">--</span><small>soat</small></div>
-      <div class="count-box"><span id="minutes">--</span><small>daqiqa</small></div>
-      <div class="count-box"><span id="seconds">--</span><small>soniya</small></div>
+    <div class="countdown">
+      <div class="count-box"><span id="days" class="gold-text">--</span><small>kun</small></div>
+      <div class="count-box"><span id="hours" class="gold-text">--</span><small>soat</small></div>
+      <div class="count-box"><span id="minutes" class="gold-text">--</span><small>daqiqa</small></div>
+      <div class="count-box"><span id="seconds" class="gold-text">--</span><small>soniya</small></div>
     </div>
 
-    <a href="#dastur" class="btn">Dasturni ko'rish</a>
+    <a href="#dastur" class="btn">DASTURNI KO'RISH</a>
   </div>
 </section>
 
-<section class="trip-info reveal" id="info">
-  <h2>Tadbir ma'lumotlari</h2>
-  <div class="gold-line"></div>
-  <p class="section-sub">Barcha tafsilotlar quyida</p>
+<section class="block reveal" id="info">
+  <div class="head">
+    <p class="script">Tafsilotlar</p>
+    <h2 class="gold-text">TADBIR MA'LUMOTLARI</h2>
+    <svg class="ornament"><use href="#orn"/></svg>
+  </div>
   <div class="info-grid">
-    <div class="info-card">
-      <h3>📍 Manzil</h3>
-      <p class="place">Versal</p>
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <h3>MANZIL</h3>
+      <p class="big">Versal</p>
       <p>Toshkent shahri</p>
-      <p class="when-badge">Sana: TBD · Kechqurun</p>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Versal+Tashkent">📍 Google Maps'da ochish</a>
+      <span class="pill">KECHQURUN · 17:00</span><br>
+      <a class="link-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Versal+Tashkent">XARITADA OCHISH</a>
     </div>
-    <div class="info-card">
-      <h3>👔 Dress Code</h3>
-      <p class="place">Rasmiy / Smart Casual</p>
-      <p>Erkaklar: kostyum yoki ko'ylak<br>Ayollar: oqshom libosi</p>
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 3l4 3 4-3 4 3-2 4h-2v11H8V10H6L4 6z"/><path d="M12 6v15"/></svg>
+      <h3>DRESS CODE</h3>
+      <p class="big">Black Tie</p>
+      <p>Janoblar: klassik kostyum<br>Xonimlar: oqshom libosi</p>
     </div>
   </div>
 </section>
 
-<section class="itinerary reveal" id="dastur">
-  <h2>Kecha dasturi</h2>
-  <div class="gold-line"></div>
-  <p class="section-sub">Vaqtinchalik dastur — aniq ma'lumotlar keyinroq yangilanadi</p>
-
-  <div class="day active" data-day="1">
-    <ul class="activities">
-      <li>
-        <div class="time-badge">17:00</div>
-        <div class="details">
-          <h4>Mehmonlarni kutib olish</h4>
-          <p>Welcome drink va ro'yxatdan o'tish</p>
-          <div class="meta">
-            <span class="location">📍 Versal lobbi</span>
-            <span class="responsible">📞 <a href="tel:+998900000000">90 000 00 00</a></span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="time-badge">18:00</div>
-        <div class="details">
-          <h4>Rasmiy ochilish</h4>
-          <p>AKFA Comfort rahbariyati so'zi va taqdimot</p>
-          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
-        </div>
-      </li>
-      <li class="highlight">
-        <div class="time-badge">18:30</div>
-        <div class="details">
-          <h4>✨ Maxsus dastur</h4>
-          <p>Mukofotlash marosimi va sovg'alar topshirish</p>
-          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="time-badge">19:30</div>
-        <div class="details">
-          <h4>Ziyofat</h4>
-          <p>Maxsus tayyorlangan kechki ovqat</p>
-          <div class="meta">
-            <span class="location">📍 Versal</span>
-            <span class="responsible">📞 <a href="tel:+998900000000">90 000 00 00</a></span>
-          </div>
-        </div>
-      </li>
-      <li class="highlight">
-        <div class="time-badge">20:30</div>
-        <div class="details">
-          <h4>🎵 Konsert dasturi</h4>
-          <p>Jonli musiqa va ko'ngilochar dastur</p>
-          <div class="meta"><span class="location">📍 Asosiy zal</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="time-badge">22:00</div>
-        <div class="details">
-          <h4>Erkin muloqot</h4>
-          <p>Networking, musiqa va raqs</p>
-          <div class="meta"><span class="location">📍 Versal</span></div>
-        </div>
-      </li>
-      <li>
-        <div class="time-badge">23:30</div>
-        <div class="details">
-          <h4>Yakunlash</h4>
-          <p>Xayrlashuv va kechaning yakunlanishi</p>
-          <div class="meta"><span class="location">📍 Versal</span></div>
-        </div>
-      </li>
-    </ul>
+<section class="block reveal" id="dastur">
+  <div class="head">
+    <p class="script">Oqshom</p>
+    <h2 class="gold-text">KECHA DASTURI</h2>
+    <svg class="ornament"><use href="#orn"/></svg>
   </div>
+
+  <ul class="timeline">
+    <li>
+      <div class="time gold-text">17:00</div>
+      <div class="ev">
+        <h4>Mehmonlarni kutib olish</h4>
+        <p>Welcome drink va ro'yxatdan o'tish</p>
+        <div class="meta"><span>Versal lobbisi</span><a href="tel:+998900000000">90 000 00 00</a></div>
+      </div>
+    </li>
+    <li>
+      <div class="time gold-text">18:00</div>
+      <div class="ev">
+        <h4>Tantanali ochilish</h4>
+        <p>AKFA Comfort rahbariyati so'zi</p>
+        <div class="meta"><span>Asosiy zal</span></div>
+      </div>
+    </li>
+    <li class="hl">
+      <div class="time gold-text">18:30</div>
+      <div class="ev">
+        <h4>Taqdirlash marosimi</h4>
+        <p>Hamkorlarni mukofotlash va sovg'alar</p>
+        <div class="meta"><span>Asosiy zal</span></div>
+      </div>
+    </li>
+    <li>
+      <div class="time gold-text">19:30</div>
+      <div class="ev">
+        <h4>Gala ziyofat</h4>
+        <p>Maxsus tayyorlangan kechki dasturxon</p>
+        <div class="meta"><span>Versal</span><a href="tel:+998900000000">90 000 00 00</a></div>
+      </div>
+    </li>
+    <li class="hl">
+      <div class="time gold-text">20:30</div>
+      <div class="ev">
+        <h4>Konsert dasturi</h4>
+        <p>Jonli musiqa va san'atkorlar chiqishi</p>
+        <div class="meta"><span>Asosiy zal</span></div>
+      </div>
+    </li>
+    <li>
+      <div class="time gold-text">22:00</div>
+      <div class="ev">
+        <h4>Erkin muloqot</h4>
+        <p>Networking, musiqa va raqs</p>
+        <div class="meta"><span>Versal</span></div>
+      </div>
+    </li>
+    <li>
+      <div class="time gold-text">23:30</div>
+      <div class="ev">
+        <h4>Kecha yakuni</h4>
+        <p>Xayrlashuv</p>
+      </div>
+    </li>
+  </ul>
+  <p class="note">Dastur vaqtinchalik — aniq ma'lumotlar keyinroq yangilanadi</p>
 </section>
 
 <footer>
-  <div class="footer-logo"><img src="akfa-logo.png" alt="AKFA"></div>
+  <img src="akfa-logo.png" alt="AKFA">
+  <p class="script">Sizni kutib qolamiz</p>
   <p>AKFA Comfort hamkorlari uchun tashkil etilgan kecha</p>
-  <p class="small">Savollar bo'lsa, mas'ul shaxslar bilan bog'laning</p>
+  <p class="small">VERSAL · TOSHKENT</p>
 </footer>
 
 <script>
 var T=new Date('2026-12-31T17:00:00+05:00').getTime(),D=document.getElementById('days'),H=document.getElementById('hours'),M=document.getElementById('minutes'),S=document.getElementById('seconds');
 function tick(){var d=T-Date.now();if(d<=0){D.textContent=H.textContent=M.textContent=S.textContent='0';return}D.textContent=Math.floor(d/864e5);H.textContent=Math.floor(d%864e5/36e5);M.textContent=Math.floor(d%36e5/6e4);S.textContent=Math.floor(d%6e4/1e3)}
 tick();setInterval(tick,1000);
-if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')})}
+if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in-view')})}
 </script>
 </body>
 </html>
